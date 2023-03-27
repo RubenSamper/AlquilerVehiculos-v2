@@ -23,11 +23,6 @@ public class Vehiculos implements IVehiculos {
 	}
 
 	@Override
-	public int getCantidad() {
-		return coleccionVehiculos.size();
-	}
-
-	@Override
 	public void insertar(Vehiculo vehiculo) throws OperationNotSupportedException {
 		if (vehiculo == null) {
 			throw new NullPointerException("ERROR: No se puede insertar un vehículo nulo.");

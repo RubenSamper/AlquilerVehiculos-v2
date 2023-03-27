@@ -5,7 +5,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.ficheros.F
 
 public enum FactoriaFuenteDatos {
 
-	MEMORIA {
+	FICHEROS {
 		
 		@Override
 		public IFuenteDatos crear() {

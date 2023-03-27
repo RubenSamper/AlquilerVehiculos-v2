@@ -9,13 +9,11 @@ import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Vehiculo;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.IFuenteDatos;
 
 public class ModeloCascada extends Modelo {
 
-	public ModeloCascada(IFuenteDatos fuenteDatos) {
-		super();
-		setFuenteDatos(fuenteDatos);
+	public ModeloCascada(FactoriaFuenteDatos fuenteFuenteDatos) {
+		super(fuenteFuenteDatos);
 	}
 
 	@Override

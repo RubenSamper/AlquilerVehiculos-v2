@@ -51,11 +51,6 @@ public class Alquileres implements IAlquileres {
 		return listaTemporal;
 	}
 
-	@Override
-	public int getCantidad() {
-		return coleccionAlquileres.size();
-	}
-
 	private void comprobarAlquiler(Cliente cliente, Vehiculo turismo, LocalDate fechaAlquiler)
 			throws OperationNotSupportedException {
 		for (Alquiler alquiler : coleccionAlquileres) {

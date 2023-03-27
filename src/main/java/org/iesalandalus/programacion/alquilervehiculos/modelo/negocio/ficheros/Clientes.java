@@ -26,11 +26,6 @@ public class Clientes implements IClientes {
 	}
 
 	@Override
-	public int getCantidad() {
-		return coleccionClientes.size();
-	}
-
-	@Override
 	public void insertar(Cliente cliente) throws OperationNotSupportedException {
 		if (cliente == null) {
 			throw new NullPointerException("ERROR: No se puede insertar un cliente nulo.");

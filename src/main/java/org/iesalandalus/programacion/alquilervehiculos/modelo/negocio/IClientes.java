@@ -9,6 +9,11 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 public interface IClientes {
 
 	List<Cliente> get();
+	
+	void comenzar();
+	
+	void terminar();
+	
 
 	void insertar(Cliente cliente) throws OperationNotSupportedException;
 

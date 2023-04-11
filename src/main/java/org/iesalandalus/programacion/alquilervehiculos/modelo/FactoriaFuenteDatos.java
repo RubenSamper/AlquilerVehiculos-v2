@@ -6,13 +6,12 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.ficheros.F
 public enum FactoriaFuenteDatos {
 
 	FICHEROS {
-		
+
 		@Override
 		public IFuenteDatos crear() {
-			// TODO Auto-generated method stub
 			return new FuenteDatosMemoria();
 		}
 	};
-	
-	public abstract IFuenteDatos crear();
+
+	abstract IFuenteDatos crear();
 }

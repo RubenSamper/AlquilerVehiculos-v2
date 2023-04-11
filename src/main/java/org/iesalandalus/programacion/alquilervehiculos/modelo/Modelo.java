@@ -19,9 +19,12 @@ public abstract class Modelo {
 	private IAlquileres alquileres;
 	private IVehiculos vehiculos;
 	private IFuenteDatos fuenteDatos;
-	
-	protected Modelo (FactoriaFuenteDatos factoriaFuenteDatos) {
+
+	protected Modelo(FactoriaFuenteDatos factoriaFuenteDatos) {
 		setFuenteDatos(factoriaFuenteDatos.crear());
+		clientes = fuenteDatos.crearClientes();
+		alquileres = fuenteDatos.crearAlquileres();
+		vehiculos = fuenteDatos.crearVehiculos();
 	}
 
 	protected IClientes getClientes() {
@@ -38,19 +41,22 @@ public abstract class Modelo {
 
 	protected void setFuenteDatos(IFuenteDatos fuenteDatos) {
 		if (fuenteDatos == null) {
-			throw new NullPointerException("ERROR: ");
+			throw new NullPointerException("ERROR: La fuente de datos no puede ser nula. ");
 		}
 		this.fuenteDatos = fuenteDatos;
 	}
 
 	public void comenzar() {
-		clientes = fuenteDatos.crearClientes();
-		alquileres = fuenteDatos.crearAlquileres();
-		vehiculos = fuenteDatos.crearVehiculos();
-
+		clientes.comenzar();
+		vehiculos.comenzar();
+		alquileres.comenzar();
 	}
 
 	public void terminar() {
+		System.out.println("");
+		clientes.terminar();
+		vehiculos.terminar();
+		alquileres.terminar();
 		System.out.println("Fin del modelo");
 
 	}
